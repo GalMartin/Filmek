@@ -57,5 +57,38 @@ namespace Filmek
         {
             MessageBox.Show($"A listában {Filmek.Count} film található.");
         }
+        private void leghosszabbfilm(object sender, RoutedEventArgs e)
+        {
+            var leghosszabb = Filmek.OrderByDescending(f => f.Hossz).FirstOrDefault();
+            MessageBox.Show($"A leghosszabb film: {leghosszabb.Cim}, Hossz: {leghosszabb.Hossz} perc.");
+        }
+        private void atlagertekeles(object sender, RoutedEventArgs e)
+        {
+            double atlag = Filmek.Average(f => f.Ertekeles);
+            MessageBox.Show($"A filmek átlagos értékelése: {atlag}");
+        private void csakscifi(object sender, RoutedEventArgs e)
+        {
+            List<Filmadatok> scifi = new List<Filmadatok>();
+            foreach (var film in Filmek)
+            {
+                if (film.Mufaj == "sci-fi")
+                {
+                    scifi.Add(film);
+                }
+            }
+            datagrid.ItemsSource = scifi;
+            datagrid.Items.Refresh();
+        }
+        private void csakcim(object sender, RoutedEventArgs e)
+        {
+            datagrid.ItemsSource = Filmek.Select(f => new { f.Cim }).ToList();
+        }
+        
+        private void cimrendszer(object sender, RoutedEventArgs e)
+        {
+            datagrid.ItemsSource = Filmek.Select(f => f.Cim).ToList();
+        }
+
+
     }
 }

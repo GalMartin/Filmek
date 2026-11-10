@@ -20,11 +20,42 @@
                     Padding="5"
                     Click="betoltes"/>
 
-            <Button Content="Hány film van?"
+            <Button Content="Hány könyv van?"
                     Width="150"
                     Margin="10"
                     Padding="5"
                     Click="hanyfilm"/>
+            
+            <Button Content="Melyik a leghosszabb könyv?"
+                    Width="150"
+                    Margin="10"
+                    Padding="5"
+                    Click="leghosszabbfilm"/>
+            <Button Content="Átlagos oldaszám"
+                    Width="150"
+                    Margin="10"
+                    Padding="5"
+                    Click="atlagertekeles"/>
+            <Button Content="Csak sci-fi filmek"
+                    Width="150"
+                    Margin="10"
+                    Padding="5"
+                    Click="csakscifi"/>
+            <Button Content="Csak címek"
+                    Width="150"
+                    Margin="10"
+                    Padding="5"
+                    Click="csakcimek"/>
+            <Button Content="Csak címek"
+                    Width="150"
+                    Margin="10"
+                    Padding="5"
+                    Click="csakcimek"/>
+            <Button Content="Rendezés cím szerint"
+                    Width="150"
+                    Margin="10"
+                    Padding="5"
+                    Click="cimrendszer"/>
         </StackPanel>
 
         <DataGrid x:Name="datagrid"
